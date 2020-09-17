@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isotope</title>
+    <style>
+      .grid {
+        width: 70%;
+        height: auto;
+      }
+      .grid-item {
+        float: left;
+        width: 33%;
+        height: auto;
+      }
+      .grid-item img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-group filter-button-group">
+      <button data-filter="*">show all</button>
+      <button data-filter=".man">man</button>
+      <button data-filter=".woman">woman</button>
+    </div>
+    <div class="grid">
+      <div class="grid-item man">
+        <img src="assets/img/team-1.jpg" alt="tema1" />
+      </div>
+      <div class="grid-item woman">
+        <img src="assets/img/team-2.jpg" alt="tema1" />
+      </div>
+      <div class="grid-item man">
+        <img src="assets/img/team-3.jpg" alt="tema1" />
+      </div>
+      <div class="grid-item woman">
+        <img src="assets/img/team-4.jpg" alt="tema1" />
+      </div>
+      <div class="grid-item woman">
+        <img src="assets/img/testimonial-2.jpg" alt="tema1" />
+      </div>
+      <div class="grid-item woman">
+        <img src="assets/img/testimonial-3.jpg" alt="tema1" />
+      </div>
+    </div>
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  </body>
+  <script>
+    $(document).ready(function () {
+      var $grid = $(".grid").isotope({
+        // options
+        itemSelector: ".grid-item",
+        layoutMode: "fitRows",
+      });
+      // filter items on button click
+      $(".filter-button-group").on("click", "button", function () {
+        var filterValue = $(this).attr("data-filter");
+        $grid.isotope({ filter: filterValue });
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "../../../../../.bitnami/stackman/machines/xampp/volumes/root/htdocs/example"
+    },
+    {
+      "path": "../../../../../.bitnami/stackman/machines/xampp/volumes/root/htdocs/onetel"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../../../06_18/onetel"
+    }
+  ],
+  "settings": {}
+}
